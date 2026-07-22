@@ -9,6 +9,10 @@
 // with an already-running server. Every sandbox user has passwordless sudo, so
 // the takeover works across user boundaries.
 import handler from "./dist/server/server.js";
+import "./src/db/setup.ts"; // Auto-runs on import
+
+// Initialize database tables on server start
+// (setup.ts auto-runs setupDatabase() when imported)
 
 // Pinned, NOT read from the environment. The published preview URL
 // (<label>.<PUBLIC_SITE_DOMAIN>) is reverse-proxied to 0.0.0.0:3000 inside the

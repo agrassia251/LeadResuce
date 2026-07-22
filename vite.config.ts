@@ -13,6 +13,10 @@ export default defineConfig({
     // rejects a proxied request with "Blocked request".
     allowedHosts: true,
   },
+  ssr: {
+    external: ["bun:sqlite", "drizzle-orm/bun-sqlite"],
+    noExternal: [],
+  },
   plugins: [
     tailwindcss(),
     tsConfigPaths({
